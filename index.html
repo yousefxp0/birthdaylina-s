@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العد التنازلي للمفاجأة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('\photo_2024-09-21_03-13-49.jpg');
+            background-size: cover;
+            background-position: center;
+            padding-top: 500px;
+            color: #fff; /* جعل النص أبيض لتكون القراءة أوضح على الخلفية */
+        }
+        h1 {
+            color: #ff5733;
+        }
+        #countdown {
+            font-size: 40px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>المتبقي على المفاجأة</h1>
+    <div id="countdown"></div>
+
+    <script>
+        // تحديد تاريخ عيد الميلاد
+        var birthday = new Date("Nov 5, 2024 00:00:00").getTime();
+
+        // تحديث العداد كل ثانية
+        var timer = setInterval(function() {
+            // التاريخ الحالي
+            var now = new Date().getTime();
+
+            // حساب الفرق بين التاريخ الحالي وتاريخ عيد الميلاد
+            var distance = birthday - now;
+
+            // حساب الأيام، الساعات، الدقائق والثواني
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // عرض الوقت في العنصر
+            document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
+            + minutes + " minutes " + seconds + " seconds ";
+
+            // إذا انتهى الوقت
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "المفاجأة بدأت!";
+            }
+        }, 1000);
+    </script>
+    
+</body>
+
+<body>
+<h1></h1>
+    <a href="file:///C:/Users/pc/Desktop/New%20folder%20(2)/index.html" target="_blank">
+        <img src="\photo_2024-09-21_03-13-49.jpg" alt="programming" alt="engneer" width="400px" hight="500px"></a>
+
+</body>
+</html>
